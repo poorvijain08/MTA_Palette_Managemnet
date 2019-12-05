@@ -1,0 +1,63 @@
+---
+  ID: "Palette_Managemnet"
+  _schema-version: "2.1"
+  version: "0.0.1"
+  modules: 
+    - 
+      name: "UI_Palette_Managemnet"
+      type: "html5"
+      path: "UI_Palette_Managemnet"
+      parameters: 
+        disk-quota: "256M"
+        memory: "256M"
+      build-parameters: 
+        builder: "grunt"
+      requires: 
+        - 
+          name: "uaa_Palette_Managemnet"
+        - 
+          name: "dest_Palette_Managemnet"
+    - 
+      name: "DB_Palette_Managemnet"
+      type: "hdb"
+      path: "DB_Palette_Managemnet"
+      requires: 
+        - 
+          name: "hdi_DB_Palette_Managemnet"
+    - 
+      name: "Node_JS_Palette_Managemnet"
+      type: "nodejs"
+      path: "Node_JS_Palette_Managemnet"
+      provides: 
+        - 
+          name: "Node_JS_Palette_Managemnet_api"
+          properties: 
+            url: "${default-url}"
+    - 
+      name: "XSJS_Palette_Managemnet"
+      type: "nodejs"
+      path: "XSJS_Palette_Managemnet"
+      provides: 
+        - 
+          name: "XSJS_Palette_Managemnet_api"
+          properties: 
+            url: "${default-url}"
+  resources: 
+    - 
+      name: "uaa_Palette_Managemnet"
+      parameters: 
+        path: "./xs-security.json"
+        service-plan: "application"
+        service: "xsuaa"
+      type: "org.cloudfoundry.managed-service"
+    - 
+      name: "dest_Palette_Managemnet"
+      parameters: 
+        service-plan: "lite"
+        service: "destination"
+      type: "org.cloudfoundry.managed-service"
+    - 
+      name: "hdi_DB_Palette_Managemnet"
+      properties: 
+        hdi-container-name: "${service-name}"
+      type: "com.sap.xs.hdi-container"
