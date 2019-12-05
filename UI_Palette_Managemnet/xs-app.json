@@ -1,0 +1,1 @@
+{"welcomeFile":"/UI_Palette_Managemnet/index.html","authenticationMethod":"route","logout":{"logoutEndpoint":"/do/logout"},"routes":[{"source":"^/UI_Palette_Managemnet/(.*)$","target":"$1","localDir":"webapp"}]}
