@@ -1,3 +1,14 @@
 namespace Palette_Managemnet.DB_Palette_Managemnet;
 context tables {
- };
+entity FPT_CarrierThing {
+DeliveryNumber: String(50) not null;
+Carrier: String(50) not null;
+ThingID: String(50) not null;
+ThingName: String(50) not null;};
+entity FPT_PaletteThing {
+DeliveryNumber: String(50) not null;
+Palette: String(50) not null;
+ThingID: String(50) not null;
+ThingName: String(50) not null;
+};
+};
