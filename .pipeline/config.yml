@@ -1,0 +1,13 @@
+---
+  steps: 
+    mtaBuild: 
+      buildTarget: "CF"
+      mtaJarLocation: "/var/jenkins_home/workspace/CFBDPipeline/mta.jar"
+      dockerImage: "sonatype/nexus3"
+    cloudFoundryDeploy: 
+      deployTool: "mtaDeployPlugin"
+      deployType: "standard"
+      cloudFoundry: 
+        org: "S0004462440trial_trial"
+        space: "dev"
+        credentialsId: "CF_CREDENTIALSID"
