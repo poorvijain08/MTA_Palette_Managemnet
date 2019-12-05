@@ -1,0 +1,1 @@
+$.response.contentType = "text/plain";
